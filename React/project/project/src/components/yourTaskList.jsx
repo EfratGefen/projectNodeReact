@@ -5,6 +5,8 @@ import Addtask from "./addtask";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 import { getTaskList } from "../redux/actions";
@@ -14,15 +16,11 @@ function mapStateToProps(state) {
     };
 }
   
-// var flag = 0;
 export default connect(mapStateToProps)(function YourTaskList(props) {
     const newNavigate=useNavigate();
-    debugger
     useEffect(()=> {
         GetYourTask()
     }, []);
-    const [flag,SetFlag]=useState(false);
-    const [Flag2, SetFlag2] = useState(false);
     const { taskList, dispatch } = props;
     const location = useLocation();
     const userCurrent = location.state.userCurrent;
@@ -38,29 +36,15 @@ export default connect(mapStateToProps)(function YourTaskList(props) {
             console.error(error);
         }
     }
-    // GetYourTask();
-    // const mapTasks=(()=>{
-    //     for(i in taskList)
-    //     {
-    //         if(taskList[i].password==userCurrent){
-    //             SetFlag(true);
-    //         }
-    //         SetFlag(false);
-    //     }
-    // })
     const Set = (() => {
-        // SetFlag2(!Flag2);
         newNavigate('/addtask');
     })
     return (
         <>
-            {/* {mapTasks()} */}
             {taskList.map((currectTask)=>(
                 <Task currectTask={currectTask}></Task>
             ))}
-            {/* {SetFlag && <Task currectTask={taskList[i]}></Task>} */}
-            <Button onClick={Set} variant="text">Add Task</Button>
-            {/* {Flag2 && <Addtask ></Addtask>} */}
+            <Button onClick={Set} sx={{color: 'black'}} variant="text">Add Task</Button>
         </>
     )
 

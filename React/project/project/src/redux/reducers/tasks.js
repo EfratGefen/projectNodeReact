@@ -2,18 +2,8 @@
 import { produce } from 'immer';
 const initialState = {
     taskType: [
-        // { taskTypeId: 1, taskTypeName: 'משימה' },
-        // { taskTypeId: 2, taskTypeName: 'באג' }
     ],
     taskList: [
-        // password: Password.current.value,
-        // taskId: TaskId.current.value,
-        // taskTypeId: TaskTypeId.current.value,
-        // name: Name.current.value,
-        // description: Description.current.value,
-        // deadLine: Deadline.current.value
-        // { password: 123456,   taskId: 1, taskTypeId: 1,name: "dvori",description: "create task component", deadLine: '02-08-2004' },
-        // { password: 111222, taskId: 2, taskTypeId: 2, name: "hadas", description: "to debbug", deadLine: '02-10-2004' }
     ],
 };
 export default produce((state, action) => {

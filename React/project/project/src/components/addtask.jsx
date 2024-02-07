@@ -28,12 +28,6 @@ export default connect(mapStateToProps)(function Addtask(props) {
     const addtask = async () => {
         try {
             const newTask = {
-    //             password: Number,
-    // taskId:Number,
-    // typeTaskId:Number,
-    // name: String, 
-    // description: String, 
-    // deadline: Date
                 password: Password.current.value,
                 taskId: TaskId.current.value,
                 typeTaskId: TaskTypeId.current.value,
@@ -69,6 +63,7 @@ export default connect(mapStateToProps)(function Addtask(props) {
                 autoComplete="off"
             >
                 <h1>Task:</h1>
+                
                 <TextField inputRef={Password} id="standard-basic" label="Password" variant="standard" /><br></br>
                 <TextField inputRef={TaskId} id="standard-basic" label="TaskId" variant="standard" /><br></br>
                 <TextField inputRef={TaskTypeId} id="standard-basic" label="TaskTypeId" variant="standard" /><br />
